@@ -24,8 +24,8 @@ def login():
                 return redirect(url_for('views.home'))
             else:
                 flash('Password is incorrect!', category='error')
-    else:
-        flash('Email does not exist!', category='error')
+        else:
+            flash('Email does not exist!', category='error')
 
     return render_template('login.html', user=current_user)
 
@@ -69,4 +69,4 @@ def sign_up():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('views.login'))
+    return redirect(url_for('views.home'))
